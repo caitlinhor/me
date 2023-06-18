@@ -19,16 +19,20 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ["what", "does", "this", "line", "do", "?"]
 
+# i think it will print the words in some_words
 for word in some_words:
-    print(word)
+    print(word) # it printed the words in some_words
 
+# it'll do the same as above
 for x in some_words:
-    print(x)
+    print(x) # it did the same as above
 
-print(some_words)
+# it'll print the whole list out
+print(some_words) # printed out the whole list
 
+# it will print out some_words contains more than 3 words
 if len(some_words) > 3:
-    print("some_words contains more than 3 words")
+    print("some_words contains more than 3 words") # it printed out some_words contains more than 3 words
 
 
 def usefulFunction():
@@ -37,7 +41,8 @@ def usefulFunction():
     what the line below does:
     https://docs.python.org/3/library/platform.html#platform.uname
     """
-    print(platform.uname())
+    # prints the system, node, release, version, machine, and processor
+    print(platform.uname()) # printed the system, node, release, version, and machine
 
 
 usefulFunction()
