@@ -9,11 +9,11 @@ def is_odd(a_number):
 
     e.g. 4 % 2 = 0
         13 %12 = 1
-         3 % 2 = 1
+        3 % 2 = 1
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+    return a_number % 2 != 0 
 
 
 def fix_it(moves=True, should_move=True):
@@ -31,7 +31,14 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    if moves and should_move:
+        return "No Problem"
+    elif moves and not should_move:
+        return "Duct Tape"
+    elif not moves and not should_move:
+        return "No Problem"
+    elif not moves and should_move:
+        return "WD-40"
 
 
 def loops_preview():
@@ -44,6 +51,7 @@ def loops_preview():
     choc_list = []
     for i in range(8):
         choc_list.append("💩")
+
     return choc_list
 
 
@@ -54,10 +62,13 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    star_list = []
+    for i in range(10) :
+        star_list.append("*")
+    return star_list
 
 
-def loops_1c(number_of_items=5, symbol="#"):
+def loops_1c(number_of_items = 5, symbol = "#"):
     """Respond to variables.
 
     Return a list of number_of_items items, each one a
@@ -67,7 +78,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     Remember that you're being passed arguments here. Don't hard code the number
     or the symbol, let it be whatever it wants to be.
     """
-    return None
+    my_list = []
+    for i in range(number_of_items):
+        my_list.append(symbol)
+    return my_list
 
 
 def loops_2():
@@ -86,10 +100,15 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
-          ]
+        ]
     """
-    return None
-
+    starfield_list = []
+    for j in range(10) :
+        star_list = []
+        for i in range(10) :
+            star_list.append("*")
+        starfield_list.append(star_list)
+    return starfield_list
 
 def loops_3():
     """Make a rising block of numbers.
@@ -110,9 +129,18 @@ def loops_3():
     remember that range(10) produces a list of numbers from 0...9
     So for every step produced by `for i in range(10):` i is a different number
     TIP: notice that this needs to to return strings of numbers,
-         so call str(number) to cast.
+        so call str(number) to cast.
     """
-    return None
+    number_block = []
+    for i in range(10) :
+        number_list = []
+        for j in range(10) :
+            number_list.append(str(i))
+        number_block.append(number_list)
+    return number_block
+
+
+
 
 
 def loops_4():
@@ -120,19 +148,26 @@ def loops_4():
 
     Return this:
     [
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    number_block = []
+    for i in range(10) :
+        number_list = []
+        for j in range(10) :
+            number_list.append(j)
+        number_block.append(number_list)
+    return number_block
+
 
 
 def loops_5():
@@ -140,16 +175,16 @@ def loops_5():
 
     Return this:
     [
-      ['(i0, j0)', '(i0, j1)', '(i0, j2)', '(i0, j3)', '(i0, j4)'],
-      ['(i1, j0)', '(i1, j1)', '(i1, j2)', '(i1, j3)', '(i1, j4)'],
-      ['(i2, j0)', '(i2, j1)', '(i2, j2)', '(i2, j3)', '(i2, j4)'],
-      ['(i3, j0)', '(i3, j1)', '(i3, j2)', '(i3, j3)', '(i3, j4)'],
-      ['(i4, j0)', '(i4, j1)', '(i4, j2)', '(i4, j3)', '(i4, j4)'],
-      ['(i5, j0)', '(i5, j1)', '(i5, j2)', '(i5, j3)', '(i5, j4)'],
-      ['(i6, j0)', '(i6, j1)', '(i6, j2)', '(i6, j3)', '(i6, j4)'],
-      ['(i7, j0)', '(i7, j1)', '(i7, j2)', '(i7, j3)', '(i7, j4)'],
-      ['(i8, j0)', '(i8, j1)', '(i8, j2)', '(i8, j3)', '(i8, j4)'],
-      ['(i9, j0)', '(i9, j1)', '(i9, j2)', '(i9, j3)', '(i9, j4)']
+        ['(i0, j0)', '(i0, j1)', '(i0, j2)', '(i0, j3)', '(i0, j4)'],
+        ['(i1, j0)', '(i1, j1)', '(i1, j2)', '(i1, j3)', '(i1, j4)'],
+        ['(i2, j0)', '(i2, j1)', '(i2, j2)', '(i2, j3)', '(i2, j4)'],
+        ['(i3, j0)', '(i3, j1)', '(i3, j2)', '(i3, j3)', '(i3, j4)'],
+        ['(i4, j0)', '(i4, j1)', '(i4, j2)', '(i4, j3)', '(i4, j4)'],
+        ['(i5, j0)', '(i5, j1)', '(i5, j2)', '(i5, j3)', '(i5, j4)'],
+        ['(i6, j0)', '(i6, j1)', '(i6, j2)', '(i6, j3)', '(i6, j4)'],
+        ['(i7, j0)', '(i7, j1)', '(i7, j2)', '(i7, j3)', '(i7, j4)'],
+        ['(i8, j0)', '(i8, j1)', '(i8, j2)', '(i8, j3)', '(i8, j4)'],
+        ['(i9, j0)', '(i9, j1)', '(i9, j2)', '(i9, j3)', '(i9, j4)']
     ]
 
     TIP:
@@ -162,7 +197,13 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    number_block = []
+    for i in range(10) :
+        coordinates_row = []
+        for j in range(5) :
+            coordinates_row.append("(i{}, j{})".format(i, j))
+        number_block.append(coordinates_row)
+    return number_block
 
 
 def loops_6():
@@ -170,22 +211,28 @@ def loops_6():
 
     Return this:
     [
-      ['0'],
-      ['0', '1'],
-      ['0', '1', '2'],
-      ['0', '1', '2', '3'],
-      ['0', '1', '2', '3', '4'],
-      ['0', '1', '2', '3', '4', '5'],
-      ['0', '1', '2', '3', '4', '5', '6'],
-      ['0', '1', '2', '3', '4', '5', '6', '7'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        ['0'],
+        ['0', '1'],
+        ['0', '1', '2'],
+        ['0', '1', '2', '3'],
+        ['0', '1', '2', '3', '4'],
+        ['0', '1', '2', '3', '4', '5'],
+        ['0', '1', '2', '3', '4', '5', '6'],
+        ['0', '1', '2', '3', '4', '5', '6', '7'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     You don't have to use a literal number in the range function.
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    wedge = []
+    for i in range(10) :
+        row = []
+        for j in range(i + 1) :
+            row.append(j)
+        wedge.append(row)
+    return wedge
 
 
 def loops_7():
@@ -209,8 +256,11 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
-
+    pyramid = []
+    for i in range(6) :
+        row = [[" "] * (4 - i) + ["*"] * (2 * i - 1) + [" "] * (4 - i)]
+        pyramid.append(row)
+    return pyramid
 
 def little_printer(some_kind_of_list, exercise_name):
     """Help to see what's going on.
