@@ -17,7 +17,10 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-    return None
+    loop = []
+    for i in range(start, stop, step) :
+        loop.append(i)
+    return loop
 
 
 def two_step_ranger(start, stop):
@@ -28,7 +31,10 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    return None
+    loop = []
+    for i in range(start, stop, 2) :
+        loop.append(i)
+    return loop
 
 
 def stubborn_asker(low, high):
@@ -39,8 +45,13 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
-    return None
-
+    while True :
+        answer = input(f"give me a number between {low} and {high} : ")
+        if low < int(answer) < high :
+            print(f"yup! {answer} is right")
+            return(answer)
+        else :
+            print(f"{answer} this number is not between {low} and {high}, try again")
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -49,7 +60,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    while True :
+        try:
+            answer = int(input(message))
+            print("yup! {} is right".format(answer))
+            return(answer)
+        except Exception as e :
+                print("{} doesn't look quite right, try again".format(e))
+
 
 
 def super_asker(low, high):
@@ -58,7 +76,18 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+    
+    message = (f"give me a number between {low} and {high} : ")
+    while True :
+        try :
+            answer = int(input((message)))
+            if low < answer < high :
+                print("yup! {} is right".format(answer))
+                return(answer)
+            else :
+                print(f"{answer} this number is not between {low} and {high}, try again")
+        except Exception as e :
+                print("{} doesn't look quite right, try again".format(e))
 
 
 if __name__ == "__main__":
